@@ -74,11 +74,11 @@ let map = L.map('mapid').setView([30, 30], 2);
 // Pass our map layers into our layers control and add the layers control to the map.
 L.control.layers(baseMaps).addTo(map);
 
-// Accessing the Toronto airline routes GeoJSON URL.
-let torontoData = "https://raw.githubusercontent.com/Luno0811/Mapping_Earthquakes/main/torontoRoutes.json";
+// Accessing the airport GeoJSON URL
+let airportData = "https://raw.githubusercontent.com/Luno0811/Mapping_Earthquakes/main/majorAirports.json";
 
 // Grabbing our GeoJSON data.
-d3.json(torontoData).then(function(data) {
+d3.json(airportData).then(function(data) {
   console.log(data);
 // Creating a GeoJSON layer with the retrieved data.
 L.geoJSON(data).addTo(map);
